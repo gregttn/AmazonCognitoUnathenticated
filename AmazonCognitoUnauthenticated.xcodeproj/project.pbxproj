@@ -14,6 +14,7 @@
 		63CA00201A3CB0EA00C4B8E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CA001F1A3CB0EA00C4B8E7 /* Images.xcassets */; };
 		63CA00231A3CB0EA00C4B8E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63CA00211A3CB0EA00C4B8E7 /* LaunchScreen.xib */; };
 		63CA002F1A3CB0EA00C4B8E7 /* AmazonCognitoUnauthenticatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA002E1A3CB0EA00C4B8E7 /* AmazonCognitoUnauthenticatedTests.swift */; };
+		63CA003A1A3CB4AD00C4B8E7 /* CognitoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA00391A3CB4AD00C4B8E7 /* CognitoStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		63CA002D1A3CB0EA00C4B8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63CA002E1A3CB0EA00C4B8E7 /* AmazonCognitoUnauthenticatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmazonCognitoUnauthenticatedTests.swift; sourceTree = "<group>"; };
 		63CA00381A3CB30C00C4B8E7 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		63CA00391A3CB4AD00C4B8E7 /* CognitoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CognitoStore.swift; sourceTree = "<group>"; };
 		918506FB39446E6A45F209E6 /* libPods-AmazonCognitoUnauthenticated.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AmazonCognitoUnauthenticated.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6681C1576379FA781DA50C /* Pods-AmazonCognitoUnauthenticated.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazonCognitoUnauthenticated.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmazonCognitoUnauthenticated/Pods-AmazonCognitoUnauthenticated.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 		63CA00151A3CB0EA00C4B8E7 /* AmazonCognitoUnauthenticated */ = {
 			isa = PBXGroup;
 			children = (
+				63CA00391A3CB4AD00C4B8E7 /* CognitoStore.swift */,
 				63CA00381A3CB30C00C4B8E7 /* BridgingHeader.h */,
 				63CA00181A3CB0EA00C4B8E7 /* AppDelegate.swift */,
 				63CA001A1A3CB0EA00C4B8E7 /* ViewController.swift */,
@@ -275,6 +278,7 @@
 			files = (
 				63CA001B1A3CB0EA00C4B8E7 /* ViewController.swift in Sources */,
 				63CA00191A3CB0EA00C4B8E7 /* AppDelegate.swift in Sources */,
+				63CA003A1A3CB4AD00C4B8E7 /* CognitoStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
