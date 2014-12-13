@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedIdentity:", name: CognitoStoreReceivedIdentityIdNotification, object: cognitoStore)
         
         cognitoStore.requestIdentity()
     }
@@ -33,9 +34,30 @@ class ViewController: UIViewController {
         }
 
         if emailField.hasText() {
-            cognitoStore.saveItem("email", value: nicknameField.text)
+            cognitoStore.saveItem("email", value: emailField.text)
         }
     }
 
+    func receivedIdentity(notification: NSNotification) {
+        requestUserInfo()
+    }
+    
+    private func requestUserInfo() {
+        cognitoStore.loadInfo(updateDisplayWithUserInfo)
+    }
+    
+    private func updateDisplayWithUserInfo(userInfo: Dictionary<NSObject, AnyObject>) {
+        dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+            self.saveButton.enabled = true
+            
+            if var nick: String = userInfo["nick"] as? String {
+                self.nicknameField.text = nick
+            }
+            
+            if var email: String = userInfo["email"] as? String {
+                self.emailField.text = email
+            }
+        })
+    }
 }
 
