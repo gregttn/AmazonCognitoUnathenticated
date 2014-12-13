@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private let nickKey: String = "nick"
+    private let emailKey: String  = "email"
     private let cognitoStore: CognitoStore = CognitoStore()
     
     @IBOutlet weak var nicknameField: UITextField!
@@ -30,11 +32,11 @@ class ViewController: UIViewController {
 
     @IBAction func saveUserInfo(sender: AnyObject) {
         if nicknameField.hasText() {
-            cognitoStore.saveItem("nick", value: nicknameField.text)
+            cognitoStore.saveItem(nickKey, value: nicknameField.text)
         }
 
         if emailField.hasText() {
-            cognitoStore.saveItem("email", value: emailField.text)
+            cognitoStore.saveItem(emailKey, value: emailField.text)
         }
     }
 
@@ -50,11 +52,11 @@ class ViewController: UIViewController {
         dispatch_sync(dispatch_get_main_queue(), { () -> Void in
             self.saveButton.enabled = true
             
-            if var nick: String = userInfo["nick"] as? String {
+            if var nick: String = userInfo[self.nickKey] as? String {
                 self.nicknameField.text = nick
             }
             
-            if var email: String = userInfo["email"] as? String {
+            if var email: String = userInfo[self.emailKey] as? String {
                 self.emailField.text = email
             }
         })
